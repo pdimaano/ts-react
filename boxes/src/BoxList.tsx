@@ -6,18 +6,27 @@ import NewBoxForm from "./NewBoxForm";
  *
  * State:
  * - boxes: [ { id, width, height, backgroundColor }, ... ]
+ *
+ *  App -> BoxList -> NewBoxForm and Box
  */
 
+interface BoxInterface {
+  id: number;
+  width: number;
+  height: number;
+  backgroundColor: string;
+}
+
 function BoxList() {
-  const [boxes, setBoxes] = useState([])
+  const [boxes, setBoxes] = useState<BoxInterface[]>([])
 
   /** add box with given { id, width, height, backgroundColor } */
-  function add(newBox) {
+  function add(newBox: BoxInterface) {
     setBoxes(boxes => [...boxes, newBox]);
   }
 
   /** remove box matching that id. */
-  function remove(id: string) {
+  function remove(id: number) {
     setBoxes(boxes => boxes.filter(box => box.id !== id));
   }
 
