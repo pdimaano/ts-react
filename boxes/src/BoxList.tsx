@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import Box from "./Box";
+import { BoxInterface } from "./interfaces";
 import NewBoxForm from "./NewBoxForm";
 
 /** Manage list of boxes
  *
  * State:
  * - boxes: [ { id, width, height, backgroundColor }, ... ]
- *
- *  App -> BoxList -> NewBoxForm and Box
  */
-
-interface BoxInterface {
-  id: number;
-  width: number;
-  height: number;
-  backgroundColor: string;
-}
 
 function BoxList() {
   const [boxes, setBoxes] = useState<BoxInterface[]>([])
@@ -26,7 +18,7 @@ function BoxList() {
   }
 
   /** remove box matching that id. */
-  function remove(id: number) {
+  function remove(id: string) {
     setBoxes(boxes => boxes.filter(box => box.id !== id));
   }
 
