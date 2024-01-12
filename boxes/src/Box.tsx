@@ -1,3 +1,4 @@
+import { BoxProps } from "./interfaces"
 /** Colored box presentation
  *
  * Props:
@@ -9,14 +10,6 @@
  *
  * BoxList -> Box
  */
-
-interface BoxPropsInterface {
-  id: number;
-  width: number;
-  height: number;
-  backgroundColor: string;
-  remove: Function;
-}
 
 function Box({ id, width = 5, height = 5, backgroundColor, remove }: BoxPropsInterface) {
 
