@@ -11,7 +11,7 @@ import { BoxProps } from "./interfaces"
  * BoxList -> Box
  */
 
-function Box({ id, width = 5, height = 5, backgroundColor, remove }: BoxPropsInterface) {
+function Box({ id, width = 5, height = 5, backgroundColor, remove }: BoxProps) {
 
   /** Remove a box. */
   function handleRemove() {
