@@ -17,8 +17,8 @@ interface NewBoxFormProps {
   createBox: (box: BoxInterface) => void
 }
 
-function NewBoxForm({ createBox }: {createBox: Function}) {
-  const [formData, setFormData] = useState<FormDataInterface>({
+function NewBoxForm({ createBox }: NewBoxFormProps) {
+  const [formData, setFormData] = useState({
     height: "",
     width: "",
     backgroundColor: "",
