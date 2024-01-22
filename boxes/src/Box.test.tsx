@@ -13,3 +13,9 @@ it("matches snapshot", function () {
         <Box id="2" width={10} height={10} backgroundColor="pink" remove={mock} />);
     expect(asFragment()).toMatchSnapshot();
 });
+
+it("matches snapshot with default properties", function () {
+    const { asFragment } = render(
+        <Box id="1" width={10} height={10} backgroundColor="pink" remove={mock} />);
+    expect(asFragment()).toMatchSnapshot();
+});
