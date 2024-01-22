@@ -7,3 +7,9 @@ const mock = () => { };
 it("renders without crashing", function () {
     render(<Box id="1" width={10} height={10} backgroundColor="pink" remove={mock} />);
 });
+
+it("matches snapshot", function () {
+    const { asFragment } = render(
+        <Box id="2" width={10} height={10} backgroundColor="pink" remove={mock} />);
+    expect(asFragment()).toMatchSnapshot();
+});
