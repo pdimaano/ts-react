@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Box"
+  >
+    <div
+      class="Box-box"
+      style="height: 10em; width: 10em; background-color: pink;"
+    />
+    <button
+      class="Box-removeBtn"
+    >
+      Remove The Box!
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot with default properties 1`] = `
+<DocumentFragment>
+  <div
+    class="Box"
+  >
+    <div
+      class="Box-box"
+      style="height: 10em; width: 10em; background-color: pink;"
+    />
+    <button
+      class="Box-removeBtn"
+    >
+      Remove The Box!
+    </button>
+  </div>
+</DocumentFragment>
+`;
