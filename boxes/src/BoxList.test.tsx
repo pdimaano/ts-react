@@ -16,3 +16,8 @@ function addBox(container: HTMLElement, height = 2, width = 3, color = "peachpuf
     const button = container.querySelector(".NewBoxForm-addBtn");
     fireEvent.click(button!);
 }
+
+it("matches snapshot when no boxes", function () {
+    const { container } = render(<BoxList />);
+    expect(container).toMatchSnapshot();
+});
