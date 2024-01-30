@@ -1,6 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import BoxList from "./BoxList";
+import Box from "./Box";
 
 /** Adding a box for testing */
 function addBox(container: HTMLElement, height = 2, width = 3, color = "peachpuff") {
@@ -21,3 +22,14 @@ it("matches snapshot when no boxes", function () {
     const { container } = render(<BoxList />);
     expect(container).toMatchSnapshot();
 });
+
+
+describe("adding boxes", function () {
+    it("can add a new box", function () {
+        const { container } = render(<BoxList />);
+
+        // no boxes yet
+        expect(container.querySelector(".Box")).not.toBeInTheDocument();
+        addBox(container);
+    })
+})
