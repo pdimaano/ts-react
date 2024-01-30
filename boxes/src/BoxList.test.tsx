@@ -41,4 +41,10 @@ describe("adding boxes", function () {
         background-color: peachpuff;
         `);
     });
+
+    it("matches snapshot after adding box", function () {
+        const { container } = render(<BoxList />);
+        addBox(container);
+        expect(container).toMatchSnapshot();
+    })
 })
