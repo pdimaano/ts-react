@@ -31,5 +31,14 @@ describe("adding boxes", function () {
         // no boxes yet
         expect(container.querySelector(".Box")).not.toBeInTheDocument();
         addBox(container);
-    })
+
+        // expect to see a box
+        const box = container.querySelector(".Box");
+        expect(box).toBeInTheDocument();
+        expect(box!.querySelector(".Box-box")).toHaveStyle(`
+        width: 3em;
+        height: 2em;
+        background-color: peachpuff;
+        `);
+    });
 })
