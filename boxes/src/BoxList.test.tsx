@@ -48,3 +48,17 @@ describe("adding boxes", function () {
         expect(container).toMatchSnapshot();
     })
 })
+
+
+describe("removing boxes", function () {
+    it("can remove a box", function () {
+        const { container } = render(<BoxList />);
+        addBox(container);
+
+        const removeBtn = container.querySelector(".Box-removeBtn") as Element;
+
+        fireEvent.click(removeBtn);
+        expect(removeBtn).not.toBeInTheDocument();
+    });
+
+})
