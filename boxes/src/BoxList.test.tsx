@@ -61,4 +61,10 @@ describe("removing boxes", function () {
         expect(removeBtn).not.toBeInTheDocument();
     });
 
+    it("matches snapshot after removing box", function () {
+        const { container } = render(<BoxList />);
+        addBox(container);
+        fireEvent.click(container.querySelector(".Box-removeBtn") as Element);
+        expect(container).toMatchSnapshot();
+    })
 })
